@@ -1,8 +1,7 @@
 import Express from "express";
-import { checkPort } from "./src/config/check_enviroment";
-import { checkDatabaseUrl } from "./src/config/check_enviroment";
+import { checkPort, checkDatabaseUrl } from "./src/config/check_enviroment.js";
 import cors from "cors";
-import cors from "cors";
+import router from "./src/routes/router.js";
 import "dotenv/config";
 
 const app = Express();
