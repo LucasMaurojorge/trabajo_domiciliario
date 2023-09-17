@@ -1,7 +1,7 @@
 import jwt from "jsonwebtoken";
 
-const generateToken = (id) => {
-  return jwt.sign({ id }, process.env.JWT_ACCESS_SECRET);
+const generateToken = (user) => {
+  return jwt.sign({ user }, process.env.JWT_ACCESS_SECRET);
 };
 
 export { generateToken };
