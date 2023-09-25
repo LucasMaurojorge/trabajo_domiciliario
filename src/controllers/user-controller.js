@@ -15,7 +15,7 @@ const createUser = async (req, res) => {
       },
     });
 
-    res.status(200).json({ user: user, token: token });
+    res.status(200).json(user);
   } catch (err) {
     if (err.code === "P2002") {
       res.json({ error: "las credenciales del usuario se repiten" });

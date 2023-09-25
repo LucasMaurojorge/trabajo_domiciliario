@@ -11,3 +11,10 @@ export const checkDatabaseUrl = (databaseUrl) => {
     process.exit(1);
   }
 };
+
+export const checkSecretKey = (secretKey) => {
+  if (!secretKey || secretKey.trim() === "") {
+    console.error("la variable de entorno JWT_ACCESS_SECRET no esta completa");
+    process.exit(1);
+  }
+};

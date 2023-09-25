@@ -1,5 +1,9 @@
 import Express from "express";
-import { checkPort, checkDatabaseUrl } from "./src/config/check_enviroment.js";
+import {
+  checkPort,
+  checkDatabaseUrl,
+  checkSecretKey,
+} from "./src/config/check_enviroment.js";
 import cors from "cors";
 import router from "./src/routes/router.js";
 import "dotenv/config";
@@ -10,6 +14,7 @@ app.use(Express.json());
 
 checkPort(process.env.PORT);
 checkDatabaseUrl(process.env.DATABASE_URL);
+checkSecretKey(process.env.JWT_ACCESS_SECRET);
 
 const corsOptions = {
   origin: "http://localhost:5173",
